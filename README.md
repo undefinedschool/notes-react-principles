@@ -24,7 +24,9 @@ Facebook tenía este problema presente en sus aplicaciones, por lo que decidiero
 
 La manipulación del DOM es uno de los principales cuellos de botella en la performance del front-end. React decide entonces tomar un enfoque más _declarativo_ y busca evitar que el browser esté continuamente realizando operaciones costosas.
 
-Por lo tanto, sólo vamos a encargarnos de diseñar las _vistas_ para cada _estado_ de nuestra aplicación y **React va a actualizar y renderizar de manera eficiente los componentes correctos cuando los datos cambien** (estado), haciendo cambios mínimos en el DOM. **La vista pasa a ser una función del estado** de la aplicación, es decir, cuando el estado de la aplicación cambia, la vista se vuelve a renderizar.
+Por lo tanto, sólo vamos a encargarnos de diseñar las _vistas_ para cada _estado_ de nuestra aplicación y **React va a actualizar y renderizar de manera eficiente los componentes correctos cuando los datos cambien** (estado), haciendo cambios mínimos en el DOM. 
+
+👉 **La vista pasa a ser una función del estado** de la aplicación, es decir, cuando el estado de la aplicación cambia, la vista se vuelve a renderizar.
 
 El código declarativo es más predecible y por lo tanto, más fácil de de razonar y debuggear.
 
@@ -46,4 +48,14 @@ Si el _estado_ de nuestra aplicación indica por ejemplo, que un usuario se encu
 
 👉 **Los componentes entonces, no dejan de ser simples funciones de JavaScript** que reciben esta información a través de diferentes parámetros a los que llamaremos _props_ (por _propiedades_) y retornan el código necesario para renderizar los componentes.
 
-#### Componentes con o sin estado (_stateless_ vs _stateful_)
+### Flujo de datos unidireccional (_one-way data flow_)
+
+Esto significa que **los datos tienen 1 y sólo 1 forma (o dirección) de ser transferidos hacia otras partes de la aplicación**. Esto implica que los _componentes hijos_ (child components) no pueden actualizar los datos que provienen de un _componente padre_ (parent component). 
+
+En React, los datos que vienen de un _componente padre_ se conocen como _props_. 
+
+👉 El principal beneficio de tomar este approach es que los datos _fluyen_ a través de nuestra aplicación en una única dirección, por lo tanto resulta más fácil de debuggear, por que sabemos qué datos provienen de dónde y es menos propenso a errores.
+
+En React, el _state_ siempre es propiedad de un componente. Cualquier cambio que se le realice sólo puede afectar a los componentes que están _debajo_ (los _child components_). 
+
+👉 **Modificar el estado de un componente no afecta a su componentes padre o hermanos, sólo los descendientes van a ser afectados. Esta es la principal razón por la que el _state_ suele _levantarse_ en el _árbol de componentes_, de manera tal que pueda compartirse y ser accedido entre los componentes que lo necesitan**.
