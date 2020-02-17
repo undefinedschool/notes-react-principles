@@ -21,3 +21,11 @@ Facebook tenía este problema presente en sus aplicaciones, por lo que decidiero
 ## Principios
 
 ### Declarativo
+
+La manipulación del DOM es uno de los principales cuellos de botella en la performance del front-end. React decide entonces tomar un enfoque más _declarativo_ y busca evitar que el browser esté continuamente realizando operaciones costosas.
+
+Por lo tanto, sólo vamos a encargarnos de diseñar las _vistas_ para cada _estado_ de nuestra aplicación y **React va a actualizar y renderizar de manera eficiente los componentes correctos cuando los datos cambien** (estado), haciendo cambios mínimos en el DOM. **La vista pasa a ser una función del estado** de la aplicación.
+
+El código declarativo es más predecible y por lo tanto, más fácil de de razonar y debuggear.
+
+### Arquitectura basada en _componentes_
