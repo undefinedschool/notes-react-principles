@@ -24,38 +24,54 @@ Facebook tenía este problema presente en sus aplicaciones, por lo que decidiero
 
 La manipulación del DOM es uno de los principales cuellos de botella en la performance del front-end. React decide entonces tomar un enfoque más _declarativo_ y busca evitar que el browser esté continuamente realizando operaciones costosas.
 
-Por lo tanto, sólo vamos a encargarnos de diseñar las _vistas_ para cada _estado_ de nuestra aplicación y **React va a actualizar y renderizar de manera eficiente los componentes correctos cuando los datos cambien** (estado), haciendo cambios mínimos en el DOM. 
+Por lo tanto, sólo vamos a encargarnos de diseñar las _vistas_ para cada _estado_ de nuestra aplicación y **React va a actualizar y renderizar de manera eficiente los componentes correctos cuando los datos cambien** (estado), haciendo cambios mínimos en el DOM. **El código declarativo es más predecible y por lo tanto, más fácil de de razonar y debuggear**.
 
-👉 **La vista pasa a ser una función del estado** de la aplicación, es decir, cuando el estado de la aplicación cambia, la vista se vuelve a renderizar.
-
-El código declarativo es más predecible y por lo tanto, más fácil de de razonar y debuggear.
+> 👉 **La vista pasa a ser entonces una función del estado** de la aplicación, es decir, cuando el estado de la aplicación cambia, la vista se vuelve a renderizar. Por lo tanto, **si queremos que la vista (UI) sea actualice, tenemos que modificar el estado de alguna forma**.
 
 ### Arquitectura basada en _componentes_
 
 Vamos a construir interfaces de usuario (UI) utilizando _componentes reutilizables_, que poseen y manejan un _estado_ propio. Usamos estos _componentes_ como si fueran bloques de Lego, para construir componentes más complejos y eventualmente una aplicación entera.
 
-👉 **Llamamos _estado_ a las características propias de un componente**. Por ejemplo, cuando tenemos un componente que hace requests a un server, puede tener dos estados posibles, pendiente o finalizado.
+> 👉 **Llamamos _estado_ a las características propias de un componente**. Por ejemplo, cuando tenemos un componente que hace requests a un server, puede tener dos estados posibles, pendiente o finalizado.
 
 La lógica de los componentes se escribe en JavaScript (y no utilizando _templates_, como es el caso de otras libs/frameworks de front), por lo que podemos pasar datos (_props_) de forma simple y mantener el estado fuera del DOM.
 
 #### Componente
 
-👉 **Un componente es un _bloque de código reutilizable_, una pieza de UI con contenido, estilos y comportamiento definidos: contiene todo el HTML, CSS y JS necesario para funcionar**. 
+> 👉 **Un componente es un _bloque de código reutilizable_, una pieza de UI con contenido, estilos y comportamiento definidos: contiene todo el HTML, CSS y JS necesario para funcionar**. 
 
 Por ejemplo, una barra de búsqueda es un componente, porque tiene una función independiente, una botón podría también a ser un componente, porque cumple una función. Básicamente, cualquier sección de la UI puede llegar a ser un componente, siempre y cuando sea lógica su encapsulamiento.
 
 Si el _estado_ de nuestra aplicación indica por ejemplo, que un usuario se encuentra logueado, crearemos los componentes correspondientes basados en esa información.
 
-👉 **Los componentes entonces, no dejan de ser simples funciones de JavaScript** que reciben esta información a través de diferentes parámetros a los que llamaremos _props_ (por _propiedades_) y retornan el código necesario para renderizar los componentes.
+> 👉 **Los componentes entonces, no dejan de ser simples funciones de JavaScript** que reciben esta información a través de diferentes parámetros a los que llamaremos _props_ (por _propiedades_) y retornan el código necesario para renderizar los componentes.
 
 ### Flujo de datos unidireccional (_one-way data flow_)
 
-Esto significa que **los datos tienen 1 y sólo 1 forma (o dirección) de ser transferidos hacia otras partes de la aplicación**. Esto implica que los _componentes hijos_ (child components) no pueden actualizar los datos que provienen de un _componente padre_ (parent component). 
+> 👉 En React,  **los datos tienen 1 y sólo 1 forma (o dirección) de ser transferidos hacia otras partes de la aplicación**. Esto implica que los _componentes hijos_ (child components) no pueden actualizar los datos que provienen de un _componente padre_ (parent component). 
 
-En React, los datos que vienen de un _componente padre_ se conocen como _props_. 
+![one-way data flow](https://image.slidesharecdn.com/wjkqukgsqgm2vger5dnt-signature-2cf736e9b897e2aaaa6315f9d31d6951ba19fae7560fe278cefb4644ac0753c6-poli-170428114140/95/ndc17-unrealjs-ue4-35-638.jpg?cb=1493434725)
 
-👉 El principal beneficio de tomar este approach es que los datos _fluyen_ a través de nuestra aplicación en una única dirección, por lo tanto resulta más fácil de debuggear, por que sabemos qué datos provienen de dónde y es menos propenso a errores.
+**Los datos que vienen de un _componente padre_ se conocen como _props_**. 
 
-En React, el _state_ siempre es propiedad de un componente. Cualquier cambio que se le realice sólo puede afectar a los componentes que están _debajo_ (los _child components_). 
+El principal beneficio de tomar este approach, en el que los datos _fluyen_ a través de nuestra aplicación en una única dirección, es que el código resulta más fácil de razonar y debuggear, porque sabemos qué datos provienen de dónde y por lo tanto menos propenso a errores.
 
-👉 **Modificar el estado de un componente no afecta a su componentes padre o hermanos, sólo los descendientes van a ser afectados. Esta es la principal razón por la que el _state_ suele _levantarse_ en el _árbol de componentes_, de manera tal que pueda compartirse y ser accedido entre los componentes que lo necesitan**.
+> 👉 Cualquier cambio que se le realice al _state_ de un componente, sólo puede afectar a los componentes que están _debajo_ (los _child components_), que van a recibirlo como _props_ de sólo lectura. 
+
+**Como los datos se mueven en una única dirección, modificar el estado de un componente no afecta a su componentes padre o hermanos: sólo los descendientes van a ser afectados**  (un _child component_ no puede modificar el _state_ de su _parent component_). Esta es la principal razón por la que [el _state_ suele _levantarse_](https://reactjs.org/docs/lifting-state-up.html) (lo movemos "hacia arriba" en el _árbol de componentes_), de manera tal que pueda compartirse y ser accedido entre los componentes que lo necesitan.
+
+### Virtual DOM
+
+> 👉 El [_Virtual DOM_](https://programmingwithmosh.com/react/react-virtual-dom-explained/) es una "versión liviana" (un gran objeto JS) del DOM real que encontramos en el browser, que React utiliza para _mapear_ elementos del DOM real y poder realizar cambios en este de una forma mucho más eficiente que si estuviéramos regenerando cada elemento del DOM y renderizando estos continuamente. 
+
+![React Virtual DOM](https://miro.medium.com/max/2048/1*wrh_lW6mpQHRsuGtw1FuqA.png)
+
+Básicamente, React toma un _snapshot_ del _state_ previo de nuestra aplicación y lo compara (a través de un [_algoritmo de diffing_](https://medium.com/@gethylgeorge/how-virtual-dom-and-diffing-works-in-react-6fc805f9f84e)) con el nuevo _state_, para de esta forma realizar los cambios mínimos necesarios, para poder así renderizar la nueva UI sin afectar tanto la _performance_ de la misma.
+
+### Sólo se encarga de la UI
+
+> 👉 **React es una librería (o biblioteca) que sólo se encarga de resolver un problema: renderizar la _vista_ o UI de nuestra aplicación**. 
+
+A diferencia de otros _frameworks_ de front-end, como Angular, Vue o Svelte, **React no es opinionado**, no asume nada sobre nuestro stack tecnológico ni sobre cómo resolver y conectar el resto de las partes; esas decisiones quedarán por nuestra cuenta. Gracias a esto, la _API_ de React resulta más concisa y simple en comparación y por lo tanto, más simple de aprender.
+
+Además, **esta característica permite también que podamos reutilizar código React en diferentes plataformas**: por ejemplo, renderizando desde el servidor usando [Node](https://nodejs.org/) o en aplicaciones móviles, a través de [React Native](https://facebook.github.io/react-native/).
