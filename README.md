@@ -30,8 +30,10 @@ El código declarativo es más predecible y por lo tanto, más fácil de de razo
 
 ### Arquitectura basada en _componentes_
 
-Vamos a construir interfaces de usuario (UI) utilizando _componentes reutilizables_. Usamos estos _componentes_ como si fueran bloques de Lego, para construir componentes más complejos y eventualmente una aplicación entera.
+Vamos a construir interfaces de usuario (UI) utilizando _componentes reutilizables_, que poseen y manejan un _estado_ propio. Usamos estos _componentes_ como si fueran bloques de Lego, para construir componentes más complejos y eventualmente una aplicación entera.
+
+La lógica de los componentes se escribe en JavaScript (y no utilizando _templates_, como es el caso de otras libs/frameworks de front), por lo que podemos pasar datos (_props_) de forma simple y mantener el estado fuera del DOM.
 
 #### Componente
 
-👉 **Un componente es un _bloque de código reutilizable_, una pieza de UI con contenido, estilos y comportamiento definidos: contiene todo el HTML, CSS y JS necesario para funcionar**. Por ejemplo, una barra de búsqueda es un componente, porque tiene una función independiente, una botón podría también a ser un componente, porque cumple una función. Básicamente, cualquier sección de la UI puede llegar a ser un componente, siempre y cuando sea lógica su separación.
+👉 **Un componente es un _bloque de código reutilizable_, una pieza de UI con contenido, estilos y comportamiento definidos: contiene todo el HTML, CSS y JS necesario para funcionar**. Por ejemplo, una barra de búsqueda es un componente, porque tiene una función independiente, una botón podría también a ser un componente, porque cumple una función. Básicamente, cualquier sección de la UI puede llegar a ser un componente, siempre y cuando sea lógica su encapsulamiento.
