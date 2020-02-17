@@ -44,6 +44,6 @@ Por ejemplo, una barra de búsqueda es un componente, porque tiene una función 
 
 Si el _estado_ de nuestra aplicación indica por ejemplo, que un usuario se encuentra logueado, crearemos los componentes correspondientes basados en esa información.
 
-👉 **Los componentes entonces, no dejan de ser simples funciones de JavaScript** que reciben esta información a través de diferentes parámetros a los que llamaremos _props_ (por _propiedades_).
+👉 **Los componentes entonces, no dejan de ser simples funciones de JavaScript** que reciben esta información a través de diferentes parámetros a los que llamaremos _props_ (por _propiedades_) y retornan el código necesario para renderizar los componentes.
 
 #### Componentes con o sin estado (_stateless_ vs _stateful_)
