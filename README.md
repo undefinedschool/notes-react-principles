@@ -87,6 +87,8 @@ React propone utilizar una alternativa, el _Virtual DOM_.
 
 > 👉 Básicamente, cada vez que agregamos nuevos elementos (componentes) a la UI, un nuevo _virtual DOM_ (representado como un árbol) es creado. Cada elemento es un _nodo_ de este árbol. React toma un _snapshot_ de los elementos de nuestra aplicación y lo carga en este árbol. Si el _state_ de alguno de estos elementos cambia, se genera un nuevo _virtual DOM_. Este DOM (virtual) es entonces comparado con el DOM (virtual) previo y se calculan las diferencias a través de un [_algoritmo de diffing_](https://medium.com/@gethylgeorge/how-virtual-dom-and-diffing-works-in-react-6fc805f9f84e). Utilizando esta información, **React calcula la forma más eficiente de realizar los cambios en el DOM real**, para poder renderizar la nueva UI de nuestra aplicación, reduciendo el impacto en la _performance_ de la misma.
 
+[![React and the Virtual DOM](https://img.youtube.com/vi/BYbgopx44vo/0.jpg)](https://www.youtube.com/watch?v=BYbgopx44vo)
+
 ### Sólo se encarga de la UI
 
 > 👉 **React es una librería (o biblioteca) que sólo se encarga de resolver un problema: renderizar la _vista_ o UI de nuestra aplicación**. 
