@@ -1,8 +1,7 @@
 > El siguiente contenido fue elaborado por [@_nhsz](https://twitter.com/_nhsz) como guía para las clases de [undefined school](https://twitter.com/undefinedSchool)
-
 > Son bienvenidos los _issues_ y _PRs_ para mejorar el contenido, corregir errores, etc. 
 
-👉 Si te resultó útil, se agradece que lo compartas para que le llegue a más gente!
+> 👉 Si te resultó útil, **se agradece que lo compartas para que le llegue a más gente!**
 
 # [WIP] Notas sobre React
 
@@ -40,11 +39,13 @@ La lógica de los componentes se escribe en JavaScript (y no utilizando _templat
 
 > 👉 **Un componente es un _bloque de código reutilizable_, una pieza de UI con contenido, estilos y comportamiento definidos: contiene todo el HTML, CSS y JS necesario para funcionar**. 
 
-Por ejemplo, una barra de búsqueda es un componente, porque tiene una función independiente, una botón podría también a ser un componente, porque cumple una función. Básicamente, cualquier sección de la UI puede llegar a ser un componente, siempre y cuando sea lógica su encapsulamiento.
+Por ejemplo, una barra de búsqueda es un componente, porque tiene una función independiente, una botón podría también a ser un componente, porque cumple una función. Básicamente, cualquier sección de la UI puede llegar a ser un componente.
+
+Por lo tanto, **en React, cada parte de la UI es un componente y cada componente tiene un estado**.
 
 Si el _estado_ de nuestra aplicación indica por ejemplo, que un usuario se encuentra logueado, crearemos los componentes correspondientes basados en esa información.
 
-> 👉 **Los componentes entonces, no dejan de ser simples funciones de JavaScript** que reciben esta información a través de diferentes parámetros a los que llamaremos _props_ (por _propiedades_) y retornan el código necesario para renderizar los componentes.
+> 👉 **Los componentes entonces, no dejan de ser simples funciones de JavaScript** que reciben esta información a través de diferentes parámetros a los que llamaremos _props_ (por _propiedades_) y retornan el código necesario (usando [_JSX_](https://reactjs.org/docs/introducing-jsx.html)) para renderizar los componentes.
 
 ### Flujo de datos unidireccional (_one-way data flow_)
 
@@ -62,11 +63,15 @@ El principal beneficio de tomar este approach, en el que los datos _fluyen_ a tr
 
 ### Virtual DOM
 
-> 👉 El [_Virtual DOM_](https://programmingwithmosh.com/react/react-virtual-dom-explained/) es una "versión liviana" (un gran objeto JS) del DOM real que encontramos en el browser, que React utiliza para _mapear_ elementos del DOM real y poder realizar cambios en este de una forma mucho más eficiente que si estuviéramos regenerando cada elemento del DOM y renderizando estos continuamente. 
+**Actualizar y volver a renderizar el DOM en el browser cada vez que queremos realizar un cambio en la UI tiene un gran impacto en la performance de nuestra aplicación**, porque implica realizar operaciones costosas. Al hacer cambios en el DOM, el elemento modificado y sus descendientes (children) deben volver a renderizarse para que el cambio se vea reflejado en la UI. Realizar estas operaciones continuamente ([_re-rendering_, _re-painting_, etc](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction)) es lo que vuelven lenta y poco eficiente a esta forma de trabajar.
+
+React propone utilizar una alternativa, el _Virtual DOM_.
+
+> 👉 **El [_Virtual DOM_](https://programmingwithmosh.com/react/react-virtual-dom-explained/) es una representación virtual del DOM, una "versión liviana" (un gran objeto JS) del DOM real que encontramos en el browser, que React utiliza para _mapear_ elementos del DOM real y poder realizar cambios en este de una forma mucho más rápida y eficiente**. Cada vez que el _state_ de nuestra aplicación cambia, se actualiza el _Virtual DOM_ y no el DOM real.
 
 ![React Virtual DOM](https://miro.medium.com/max/2048/1*wrh_lW6mpQHRsuGtw1FuqA.png)
 
-Básicamente, React toma un _snapshot_ del _state_ previo de nuestra aplicación y lo compara (a través de un [_algoritmo de diffing_](https://medium.com/@gethylgeorge/how-virtual-dom-and-diffing-works-in-react-6fc805f9f84e)) con el nuevo _state_, para de esta forma realizar los cambios mínimos necesarios, para poder así renderizar la nueva UI sin afectar tanto la _performance_ de la misma.
+> 👉 Básicamente, cada vez que agregamos nuevos elementos (componentes) a la UI, un nuevo _virtual DOM_ (representado como un árbol) es creado. Cada elemento es un _nodo_ de este árbol. React toma un _snapshot_ de los elementos de nuestra aplicación y lo carga en este árbol. Si el _state_ de alguno de estos elementos cambia, se genera un nuevo _virtual DOM_. Este DOM (virtual) es entonces comparado con el DOM (virtual) previo y se calculan las diferencias a través de un [_algoritmo de diffing_](https://medium.com/@gethylgeorge/how-virtual-dom-and-diffing-works-in-react-6fc805f9f84e). Utilizando esta información, **React calcula la forma más eficiente de realizar los cambios en el DOM real**, para poder renderizar la nueva UI de nuestra aplicación, reduciendo el impacto en la _performance_ de la misma.
 
 ### Sólo se encarga de la UI
 
@@ -75,3 +80,11 @@ Básicamente, React toma un _snapshot_ del _state_ previo de nuestra aplicación
 A diferencia de otros _frameworks_ de front-end, como Angular, Vue o Svelte, **React no es opinionado**, no asume nada sobre nuestro stack tecnológico ni sobre cómo resolver y conectar el resto de las partes; esas decisiones quedarán por nuestra cuenta. Gracias a esto, la _API_ de React resulta más concisa y simple en comparación y por lo tanto, más simple de aprender.
 
 Además, **esta característica permite también que podamos reutilizar código React en diferentes plataformas**: por ejemplo, renderizando desde el servidor usando [Node](https://nodejs.org/) o en aplicaciones móviles, a través de [React Native](https://facebook.github.io/react-native/).
+
+## Nuestra tarea como _React devs_
+
+Como devs, tendremos que tomar varias decisiones relacionadas a la _arquitectura de la aplicación_, que podrían resumirse en
+
+- definir los **_React components_**
+- definir qué datos forman parte del **_state_** y dónde (en qué componente) va a vivir
+- decidir **qué cambios deben realizarse en la UI cuando el _state_ cambia**
