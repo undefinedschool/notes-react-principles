@@ -41,6 +41,8 @@ Por lo tanto, sólo vamos a encargarnos de diseñar las _vistas_ para cada _esta
 
 > 👉 **La vista pasa a ser entonces una función del estado** de la aplicación, es decir, cuando el estado de la aplicación cambia, la vista se vuelve a renderizar. Por lo tanto, **si queremos que la vista (UI) sea actualice, tenemos que modificar el estado de alguna forma**.
 
+Ya no necesitamos preocuparnos por cómo manipular el DOM o manejar eventos del mismo, React se va a encargar de abstraernos de estos detalles.
+
 ### Arquitectura basada en _componentes_
 
 Vamos a construir interfaces de usuario (UI) utilizando _componentes reutilizables_, que poseen y manejan un _estado_ propio. Usamos estos _componentes_ como si fueran bloques de Lego, para construir componentes más complejos y eventualmente una aplicación entera.
@@ -85,7 +87,7 @@ React propone utilizar una alternativa, el _Virtual DOM_.
 
 ![React Virtual DOM](https://miro.medium.com/max/2048/1*wrh_lW6mpQHRsuGtw1FuqA.png)
 
-> 👉 Básicamente, cada vez que agregamos nuevos elementos (componentes) a la UI, un nuevo _virtual DOM_ (representado como un árbol) es creado. Cada elemento es un _nodo_ de este árbol. React toma un _snapshot_ de los elementos de nuestra aplicación y lo carga en este árbol. Si el _state_ de alguno de estos elementos cambia, se genera un nuevo _virtual DOM_. Este DOM (virtual) es entonces comparado con el DOM (virtual) previo y se calculan las diferencias a través de un [_algoritmo de diffing_](https://medium.com/@gethylgeorge/how-virtual-dom-and-diffing-works-in-react-6fc805f9f84e). Utilizando esta información, **React calcula la forma más eficiente de realizar los cambios en el DOM real**, para poder renderizar la nueva UI de nuestra aplicación, reduciendo el impacto en la _performance_ de la misma.
+> 👉 Básicamente, cada vez que agregamos nuevos elementos (componentes) a la UI, un nuevo _virtual DOM_ (representado como un árbol) es creado. Cada elemento es un _nodo_ de este árbol. React toma un _snapshot_ de los elementos de nuestra aplicación y lo carga en este árbol. Si el _state_ de alguno de estos elementos cambia, se genera un nuevo _virtual DOM_. Este DOM (virtual) es entonces comparado con el DOM (virtual) previo y se calculan las diferencias a través de un [_algoritmo de diffing_](https://medium.com/@gethylgeorge/how-virtual-dom-and-diffing-works-in-react-6fc805f9f84e). Utilizando esta información, **React calcula la forma más eficiente de realizar los cambios en el DOM real**, actualizando sólo los nodos que cambiaron, reduciendo el impacto en la _performance_ de nuestra aplicación.
 
 [![React and the Virtual DOM](https://img.youtube.com/vi/BYbgopx44vo/0.jpg)](https://www.youtube.com/watch?v=BYbgopx44vo)
 
