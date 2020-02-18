@@ -89,7 +89,16 @@ React propone utilizar una alternativa, el _Virtual DOM_.
 
 > 👉 Básicamente, cada vez que agregamos nuevos elementos (componentes) a la UI, un nuevo _virtual DOM_ (representado como un árbol) es creado. Cada elemento es un _nodo_ de este árbol. React toma un _snapshot_ de los elementos de nuestra aplicación y lo carga en este árbol. Si el _state_ de alguno de estos elementos cambia, se genera un nuevo _virtual DOM_. Este DOM (virtual) es entonces comparado con el DOM (virtual) previo y se calculan las diferencias a través de un [_algoritmo de diffing_](https://medium.com/@gethylgeorge/how-virtual-dom-and-diffing-works-in-react-6fc805f9f84e). Utilizando esta información, **React calcula la forma más eficiente de realizar los cambios en el DOM real**, actualizando sólo los nodos que cambiaron, reduciendo el impacto en la _performance_ de nuestra aplicación.
 
+Otra estrategia que utiliza React para mejorar la performance es enviar los cambios detectados en el virtual DOM por _lotes_ (batch), para luego realizar los cambios necesarios en el DOM real de una vez, en lugar de estar enviando continuamente updates al mismo por cada cambio del estado.
+
 [![React and the Virtual DOM](https://img.youtube.com/vi/BYbgopx44vo/0.jpg)](https://www.youtube.com/watch?v=BYbgopx44vo)
+
+> 👉 **En resumen:**
+
+> - realizar updates frecuentes del DOM (real) es costoso y tiene un gran impacto en la performance
+> - el _Virtual DOM_ es una representación virtual del DOM real que React utiliza para mejorar la performance
+> - cuando ocurre un cambio en el _state_, se genera un nuevo _virtual DOM_ y se compara con la versión anterior. Esto se conoce como _diffing_
+> - los cambios a realizar en el DOM se envían por tandas, para actualizar la UI con menor frecuencia y por lo tanto, menor costo
 
 ### Sólo se encarga de la UI
 
