@@ -91,8 +91,6 @@ React propone utilizar una alternativa, el _Virtual DOM_.
 
 Otra estrategia que utiliza React para mejorar la performance es enviar los cambios detectados en el virtual DOM por _lotes_ (batch), para luego realizar los cambios necesarios en el DOM real de una vez, en lugar de estar enviando continuamente updates al mismo por cada cambio del estado.
 
-[![React and the Virtual DOM](https://img.youtube.com/vi/BYbgopx44vo/0.jpg)](https://www.youtube.com/watch?v=BYbgopx44vo)
-
 > 👉 **En resumen:**
 
 > - realizar updates frecuentes del DOM (real) es costoso y tiene un gran impacto en la performance
