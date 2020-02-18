@@ -116,4 +116,6 @@ Como devs, tendremos que tomar varias decisiones relacionadas a la _arquitectura
 - definir qué datos forman parte del **_state_** y dónde (en qué componente) va a vivir
 - decidir **qué cambios deben realizarse en la UI cuando el _state_ cambia**
 
-<sup>1</sup>Estos problemas existieron (y todavía existen) en las librerías que decidieron usar _"2-way data binding"_ (o flujo de datos _bidireccional_). Es decir, los cambios en la UI afectan al objeto JS que la UI quiere representar y viceversa.
+---
+
+<sup>1</sup>Estos problemas existieron (y todavía existen) en las librerías que decidieron usar **_"2-way data binding"_ (o flujo de datos _bidireccional_)**. Es decir, los cambios en la UI afectan al objeto JS que la UI quiere representar y viceversa.
