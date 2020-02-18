@@ -27,9 +27,9 @@ Con los años, la complejidad de las aplicaciones web fue creciendo. Al principi
 
 Pero la complejidad de las bases de código seguía aumentando y los programas eran cada vez más difíciles de mantener. El framework _AngularJS_ aparece en el 2010 y se posiciona rápidamente como el nuevo standard para construir SPAs (single-page applications), aportando una estructura y el uso de ciertos patrones (MVC) para organizar mejor nuestras aplicaciones.
 
-Pero en aplicaciones donde acciones en diferentes partes de la UI tenían efectos sobre otras<sup>1</sup>, los problemas seguían estando y nos encontrábamos con aplicaciones de _Angular_ donde era difícil entender el _flujo de los datos_ y qué parte del código afectaba a cuál otra. 
+Más aún, en aplicaciones donde acciones en diferentes partes de la UI tenían efectos sobre otras<sup>1</sup>, los problemas seguían estando y nos encontrábamos con aplicaciones escritas en _Angular_ donde era difícil entender el _flujo de los datos_ y qué parte del código afectaba a cuál otra. 
 
-Facebook tenía este problema presente en sus aplicaciones, por lo que decidieron desarrollar una alternativa. [En el 2013, Facebook libera _React_](https://www.youtube.com/watch?v=GW0rj4sNH2w), _una biblioteca de JavaScript para construir interfaces de usuario_, según definen en el [sitio oficial](https://reactjs.org/). 
+Facebook tenía este problema muy presente, por lo que decidieron desarrollar una alternativa. [En el 2013, Facebook libera _React_](https://www.youtube.com/watch?v=GW0rj4sNH2w), _una biblioteca de JavaScript para construir interfaces de usuario_, según definen en el [sitio oficial](https://reactjs.org/). 
 
 ## Principios
 
@@ -116,4 +116,4 @@ Como devs, tendremos que tomar varias decisiones relacionadas a la _arquitectura
 - definir qué datos forman parte del **_state_** y dónde (en qué componente) va a vivir
 - decidir **qué cambios deben realizarse en la UI cuando el _state_ cambia**
 
-<sup>1</sup> Estos problemas existieron (y todavía existen) en las librerías que decidieron usar "2-way data binding". Es decir, los cambios en la UI afectan al objeto JS que la UI quiere representar, así como cambios en este último afectan a su vez a la UI.
+<sup>1</sup>Estos problemas existieron (y todavía existen) en las librerías que decidieron usar _"2-way data binding"_ (o flujo de datos _bidireccional_). Es decir, los cambios en la UI afectan al objeto JS que la UI quiere representar y viceversa.
