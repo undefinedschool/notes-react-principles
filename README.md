@@ -5,6 +5,20 @@
 
 # [WIP] Notas sobre React
 
+## Contenido
+
+- [Qué problema resuelve React?](https://github.com/undefinedschool/notes-react#qu%C3%A9-problema-resuelve-react)
+- [Principios](https://github.com/undefinedschool/notes-react#principios)
+  - [Declarativo](https://github.com/undefinedschool/notes-react#declarativo)
+  - [Arquitectura basada en _componentes_](https://github.com/undefinedschool/notes-react#arquitectura-basada-en-componentes)
+    - [Componente](https://github.com/undefinedschool/notes-react#componente)
+  - [Flujo de datos unidireccional (one-way data flow)](https://github.com/undefinedschool/notes-react#flujo-de-datos-unidireccional-one-way-data-flow)
+  - [Virtual DOM](https://github.com/undefinedschool/notes-react#virtual-dom)
+  - [Sólo se encarga de la UI](https://github.com/undefinedschool/notes-react#s%C3%B3lo-se-encarga-de-la-ui)
+- [Nuestra tarea como React devs](https://github.com/undefinedschool/notes-react#nuestra-tarea-como-react-devs)
+
+---
+
 ## Qué problema resuelve React?
 
 Antes de empezar a hablar sobre los diferentes conceptos, siempre es útil entender un poco la motivación, por qué existe, qué problema resuelve la herramienta que elegimos. En mi opinión, este proceso resulta además muy beneficioso para entender, tanto mejor como más rápido, los conceptos fundamentales detrás de cualquier tecnología que decidamos usar.
@@ -83,7 +97,7 @@ Además, **esta característica permite también que podamos reutilizar código 
 
 ## Nuestra tarea como _React devs_
 
-Como devs, tendremos que tomar varias decisiones relacionadas a la _arquitectura de la aplicación_, que podrían resumirse en
+Como devs, tendremos que tomar varias decisiones relacionadas a la _arquitectura de la aplicación_, que podrían resumirse en los siguientes puntos:
 
 - definir los **_React components_**
 - definir qué datos forman parte del **_state_** y dónde (en qué componente) va a vivir
