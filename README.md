@@ -3,7 +3,7 @@
 
 > 👉 Si te resultó útil, **se agradece que lo compartas para que le llegue a más gente!**
 
-# [WIP] Notas sobre React
+# Notas sobre React: Principios
 
 ## Contenido
 
@@ -61,7 +61,7 @@ Por lo tanto, **en React, cada parte de la UI es un componente y cada componente
 
 Si el _estado_ de nuestra aplicación indica por ejemplo, que un usuario se encuentra logueado, crearemos los componentes correspondientes basados en esa información.
 
-> 👉 **Los componentes entonces, no dejan de ser simples funciones de JavaScript** que reciben esta información a través de diferentes parámetros a los que llamaremos _props_ (por _propiedades_) y retornan el código necesario (usando [_JSX_](https://reactjs.org/docs/introducing-jsx.html)) para renderizar los componentes.
+> 👉 **Los componentes entonces, no dejan de ser simples funciones de JavaScript** que reciben esta información a través de diferentes parámetros a los que llamaremos _props_ (por _propiedades_) y retornan el código necesario (usando [_JSX_](https://reactjs.org/docs/introducing-jsx.html)) para renderizar los componentes. **Las props son _inmutables_ y siempre se pasan de componentes superiores a componentes inferiores**.
 
 ### Flujo de datos unidireccional (_one-way data flow_)
 
@@ -116,4 +116,4 @@ Como devs, tendremos que tomar varias decisiones relacionadas a la _arquitectura
 
 ---
 
-<sup>1</sup>Estos problemas existieron (y todavía existen) en las librerías que decidieron usar **_"2-way data binding"_ (o flujo de datos _bidireccional_)**. Es decir, los cambios en la UI afectan al objeto JS que la UI quiere representar y viceversa.
+<sup>1</sup>Estos problemas existieron (y todavía existen) en las librerías que decidieron usar **[_2-way data binding_](https://medium.com/front-end-weekly/what-is-2-way-data-binding-44dd8082e48e) (o flujo de datos _bidireccional_)**. Es decir, los cambios en la UI afectan al objeto JS que la UI quiere representar y viceversa.
