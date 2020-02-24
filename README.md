@@ -3,7 +3,12 @@
 
 > 👉 Si te resultó útil, **se agradece que lo compartas para que le llegue a más gente!**
 
-# Notas sobre React: Principios
+# React: Principios
+
+## Notas sobre React
+
+- [**React: Principios**](https://github.com/undefinedschool/notes-react-basics)
+- [**React: Conceptos Básicos**](https://github.com/undefinedschool/notes-react-basics)
 
 ## Contenido
 
