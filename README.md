@@ -7,8 +7,8 @@
 
 ## Notas sobre React
 
-- [**React: Principios**](https://github.com/undefinedschool/notes-react-principles/)
-- [**React: Conceptos Básicos**](https://github.com/undefinedschool/notes-react-basics)
+- [**Principios**](https://github.com/undefinedschool/notes-react-principles/)
+- [**Conceptos Básicos**](https://github.com/undefinedschool/notes-react-basics)
 
 ## Contenido
 
