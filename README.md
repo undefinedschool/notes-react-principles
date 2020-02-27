@@ -3,7 +3,7 @@
 
 > 👉 Si te resultó útil, **se agradece que lo compartas para que le llegue a más gente!**
 
-![React: Principios](https://i.imgur.com/KpuNcbY.png)
+# ![React: Principios](https://i.imgur.com/KpuNcbY.png)
 
 ## Notas sobre React
 
