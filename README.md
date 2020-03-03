@@ -36,6 +36,8 @@ Más aún, en aplicaciones donde acciones en diferentes partes de la UI tenían 
 
 Facebook tenía este problema muy presente, por lo que decidieron desarrollar una alternativa. [En el 2013, Facebook libera _React_](https://www.youtube.com/watch?v=GW0rj4sNH2w), _una biblioteca de JavaScript para construir interfaces de usuario_, según definen en el [sitio oficial](https://reactjs.org/). 
 
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-react-principles#contenido)
+
 ## Principios
 
 ### Declarativo
@@ -48,6 +50,8 @@ Por lo tanto, sólo vamos a encargarnos de diseñar las _vistas_ para cada _esta
 
 Ya no necesitamos preocuparnos por cómo manipular el DOM o manejar eventos del mismo, React se va a encargar de abstraernos de estos detalles.
 
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-react-principles#contenido)
+
 ### Arquitectura basada en _componentes_
 
 Vamos a construir interfaces de usuario (UI) utilizando _componentes reutilizables_, que poseen y manejan un _estado_ propio. Usamos estos _componentes_ como si fueran bloques de Lego, para construir componentes más complejos y eventualmente una aplicación entera.
@@ -55,6 +59,8 @@ Vamos a construir interfaces de usuario (UI) utilizando _componentes reutilizabl
 > 👉 **Llamamos _estado_ a las características propias de un componente**. Por ejemplo, cuando tenemos un componente que hace requests a un server, puede tener dos estados posibles, pendiente o finalizado.
 
 La lógica de los componentes se escribe en JavaScript (y no utilizando _templates_, como es el caso de otras libs/frameworks de front), por lo que podemos pasar datos (_props_) de forma simple y mantener el estado fuera del DOM.
+
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-react-principles#contenido)
 
 #### Componente
 
@@ -67,6 +73,8 @@ Por lo tanto, **en React, cada parte de la UI es un componente y cada componente
 Si el _estado_ de nuestra aplicación indica por ejemplo, que un usuario se encuentra logueado, crearemos los componentes correspondientes basados en esa información.
 
 > 👉 **Los componentes entonces, no dejan de ser simples funciones de JavaScript** que reciben esta información a través de diferentes parámetros a los que llamaremos _props_ (por _propiedades_) y retornan el código necesario (usando [_JSX_](https://reactjs.org/docs/introducing-jsx.html)) para renderizar los componentes. **Las props son _inmutables_ y siempre se pasan de componentes superiores a componentes inferiores**.
+
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-react-principles#contenido)
 
 ### Flujo de datos unidireccional (_one-way data flow_)
 
@@ -81,6 +89,8 @@ El principal beneficio de tomar este approach, en el que los datos _fluyen_ a tr
 > 👉 Cualquier cambio que se le realice al _state_ de un componente, sólo puede afectar a los componentes que están _debajo_ (los _child components_), que van a recibirlo como _props_ de sólo lectura. 
 
 **Como los datos se mueven en una única dirección, modificar el estado de un componente no afecta a su componentes padre o hermanos: sólo los descendientes van a ser afectados**  (un _child component_ no puede modificar el _state_ de su _parent component_). Esta es la principal razón por la que [el _state_ suele _levantarse_](https://reactjs.org/docs/lifting-state-up.html) (lo movemos "hacia arriba" en el _árbol de componentes_), de manera tal que pueda compartirse y ser accedido entre los componentes que lo necesitan.
+
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-react-principles#contenido)
 
 ### Virtual DOM
 
@@ -103,6 +113,8 @@ Otra estrategia que utiliza React para mejorar la performance es enviar los camb
 > - cuando ocurre un cambio en el _state_, se genera un nuevo _virtual DOM_ y se compara con la versión anterior. Esto se conoce como _diffing_
 > - los cambios a realizar en el DOM se envían por tandas, para actualizar la UI con menor frecuencia y por lo tanto, menor costo
 
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-react-principles#contenido)
+
 ### Sólo se encarga de la UI
 
 > 👉 **React es una librería (o biblioteca) que sólo se encarga de resolver un problema: renderizar la _vista_ o UI de nuestra aplicación**. 
@@ -111,6 +123,8 @@ A diferencia de otros _frameworks_ de front-end, como Angular, Vue o Svelte, **R
 
 Además, **esta característica permite también que podamos reutilizar código React en diferentes plataformas**: por ejemplo, renderizando desde el servidor usando [Node](https://nodejs.org/) o en aplicaciones móviles, a través de [React Native](https://facebook.github.io/react-native/).
 
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-react-principles#contenido)
+
 ## Nuestra tarea como _React devs_
 
 Como devs, tendremos que tomar varias decisiones relacionadas a la _arquitectura de la aplicación_, que podrían resumirse en los siguientes puntos:
@@ -118,6 +132,8 @@ Como devs, tendremos que tomar varias decisiones relacionadas a la _arquitectura
 - definir los **_React components_**
 - definir qué datos forman parte del **_state_** y dónde (en qué componente) va a vivir
 - decidir **qué cambios deben realizarse en la UI cuando el _state_ cambia**
+
+[↑ Ir al inicio](https://github.com/undefinedschool/notes-react-principles#contenido)
 
 ---
 
