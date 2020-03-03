@@ -5,9 +5,10 @@
 
 # ![React: Principios](https://i.imgur.com/KpuNcbY.png)
 
-## Notas sobre React
+## Notas relacionadas
 
-- [**Principios**](https://github.com/undefinedschool/notes-react-principles/)
+### `react`
+
 - [**Conceptos Básicos**](https://github.com/undefinedschool/notes-react-basics)
 
 ## Contenido
