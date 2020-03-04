@@ -138,4 +138,4 @@ Como devs, tendremos que tomar varias decisiones relacionadas a la _arquitectura
 
 ---
 
-<sup id="cite_note-1"><a href="#cite_ref-1">1</a></sup>Estos problemas existieron (y todavía existen) en las librerías que decidieron usar **[_2-way data binding_](https://medium.com/front-end-weekly/what-is-2-way-data-binding-44dd8082e48e) (o flujo de datos _bidireccional_)**. Es decir, los cambios en la UI afectan al objeto JS que la UI quiere representar y viceversa.
+<sup id="cite_note-1"><a href="#cite_ref-1">1</a></sup> Estos problemas existieron (y todavía existen) en las librerías que decidieron usar **[_2-way data binding_](https://medium.com/front-end-weekly/what-is-2-way-data-binding-44dd8082e48e) (o flujo de datos _bidireccional_)**. Es decir, los cambios en la UI afectan al objeto JS que la UI quiere representar y viceversa.
