@@ -1,31 +1,6 @@
 # README
 
-## Getting Super Powers
-
-Becoming a super hero is a fairly straight forward process:
-
-```
-$ give me super-powers
-```
-
-{% hint style="info" %}
- Super-powers are granted randomly so please submit an issue if you're not happy with yours.
-{% endhint %}
-
-Once you're strong enough, save the world:
-
-{% code title="hello.sh" %}
-```bash
-# Ain't no code for that yet, sorry
-echo 'You got to trust me on this, I saved the world'
-```
-{% endcode %}
-
-> El siguiente contenido fue elaborado por [@\_nhsz](https://twitter.com/_nhsz) como guía para las clases de [undefined school](https://twitter.com/undefinedSchool) Son bienvenidos los _issues_ y _PRs_ para mejorar el contenido, corregir errores, etc.
->
-> 👉 Si te resultó útil, **se agradece que lo compartas para que le llegue a más gente!**
-
-## ![React: Principios](https://i.imgur.com/KpuNcbY.png)
+![React: Principios](https://i.imgur.com/KpuNcbY.png)
 
 ### Notas relacionadas
 
