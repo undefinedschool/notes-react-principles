@@ -1,49 +1,8 @@
 # ![React: Principios](https://i.imgur.com/KpuNcbY.png)
 
+### 👉 Ver [todas las notas](https://github.com/undefinedschool/notes)
 
-<div align="center">  
-  <p align="center">
-  <sub>Hola! Soy Nico (<strong>nhsz</strong>), <strong>Dev Full Stack JavaScript y mentor</strong>.</sub>
-  </p>
-  
-  <p align="center">
-    <sub>
-      Hace un tiempo (principios de 2019) empecé un proyecto llamado <a href="https://undefinedschool.io"><strong>undefined school</strong></a>, una <strong>escuela de Desarrollo Web Full Stack JavaScript</strong>, 100% Open Source, con mentorías personalizadas para grupos reducidos y el foco puesto en los <strong>fundamentos</strong> y <strong>conceptos avanzados</strong>.
-    </sub>
-  </p>
-
-  <p align="center">
-    <sub>
-      Me interesa mucho la intersección entre la educación y la tecnología, por eso también participo en proyectos como <a href="https://freecodecampba.org">freeCodeCampBA</a> (co-founder y co-organizador) y <a href="https://twitter.com/LXBA_">Learning Experience BA</a> (co-founder y co-organizador).
-    </sub>
-  </p>
-
- <p align="center">
-    <sub>
-  👉 Si estás arrancando en el mundo del desarrollo web y necesitás una mano, podés encontrarme en <a href="https://twitter.com/_nhsz/">Twitter</a> (también para hablar sobre cualquier tema relacionado a JavaScript o <em>#nerdeadas</em> en general 😛).
-  </sub>
-  </p>
-  
-  <p align="center">
-  <sub>
-    Por último, te cuento que soy muy fan del café (obvio que negro y sin azúcar), asi que si las notas te resultaron útiles y querés colaborar para que no me quede dormido y siga escribiendo guías, apuntes y más <strong>contenido Open Source en español</strong>, podés invitarme uno, gracias! ❤️
-  </sub>
-  </p>
-  
-  <p align="center">
-  ☕
-  <code> 
-  <a href="https://cafecito.app/nhsz">
-    <strong>Invitame 1 café!</strong>
-  </a>
-  </code>
-  </p>
-  <hr>
-</div>
-
-👉 Ver [todas las notas](https://github.com/undefinedschool/notes)
-
-### Contenido
+## Contenido
 
 * [Qué problema resuelve React?](https://github.com/undefinedschool/notes-react#qu%C3%A9-problema-resuelve-react)
 * [Principios](https://github.com/undefinedschool/notes-react#principios)
@@ -55,7 +14,7 @@
   * [Sólo se encarga de la UI](https://github.com/undefinedschool/notes-react#s%C3%B3lo-se-encarga-de-la-ui)
 * [Nuestra tarea como React devs](https://github.com/undefinedschool/notes-react#nuestra-tarea-como-react-devs)
 
-### Qué problema resuelve React?
+## Qué problema resuelve React?
 
 Antes de empezar a hablar sobre los diferentes conceptos, siempre es útil entender un poco la motivación, por qué existe, qué problema resuelve la herramienta que elegimos. En mi opinión, este proceso resulta además muy beneficioso para entender, tanto mejor como más rápido, los conceptos fundamentales detrás de cualquier tecnología que decidamos usar.
 
@@ -69,9 +28,9 @@ Facebook tenía este problema muy presente, por lo que decidieron desarrollar un
 
 [↑ Ir al inicio](https://github.com/undefinedschool/notes-react-principles#contenido)
 
-### Principios
+## Principios
 
-#### Declarativo
+### Declarativo
 
 La manipulación del DOM es uno de los principales cuellos de botella en la performance del front-end. React decide entonces tomar un enfoque más _declarativo_ y busca evitar que el browser esté continuamente realizando operaciones costosas.
 
@@ -83,7 +42,7 @@ Ya no necesitamos preocuparnos por cómo manipular el DOM o manejar eventos del 
 
 [↑ Ir al inicio](https://github.com/undefinedschool/notes-react-principles#contenido)
 
-#### Arquitectura basada en _componentes_
+### Arquitectura basada en _componentes_
 
 Vamos a construir interfaces de usuario \(UI\) utilizando _componentes reutilizables_, que poseen y manejan un _estado_ propio. Usamos estos _componentes_ como si fueran bloques de Lego, para construir componentes más complejos y eventualmente una aplicación entera.
 
@@ -107,7 +66,7 @@ Si el _estado_ de nuestra aplicación indica por ejemplo, que un usuario se encu
 
 [↑ Ir al inicio](https://github.com/undefinedschool/notes-react-principles#contenido)
 
-#### Flujo de datos unidireccional \(_one-way data flow_\)
+### Flujo de datos unidireccional \(_one-way data flow_\)
 
 > 👉 En React, **los datos tienen 1 y sólo 1 forma \(o dirección\) de ser transferidos hacia otras partes de la aplicación**. Esto implica que los _componentes hijos_ \(child components\) no pueden actualizar los datos que provienen de un _componente padre_ \(parent component\).
 
@@ -123,7 +82,7 @@ El principal beneficio de tomar este approach, en el que los datos _fluyen_ a tr
 
 [↑ Ir al inicio](https://github.com/undefinedschool/notes-react-principles#contenido)
 
-#### Virtual DOM
+### Virtual DOM
 
 **Actualizar y volver a renderizar el DOM en el browser cada vez que queremos realizar un cambio en la UI tiene un gran impacto en la performance de nuestra aplicación**, porque implica realizar operaciones costosas. Al hacer cambios en el DOM, el elemento modificado y sus descendientes \(children\) deben volver a renderizarse para que el cambio se vea reflejado en la UI. Realizar estas operaciones continuamente \([_re-rendering_, _re-painting_, etc](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction)\) es lo que vuelven lenta y poco eficiente a esta forma de trabajar.
 
@@ -146,7 +105,7 @@ Otra estrategia que utiliza React para mejorar la performance es enviar los camb
 
 [↑ Ir al inicio](https://github.com/undefinedschool/notes-react-principles#contenido)
 
-#### Sólo se encarga de la UI
+### Sólo se encarga de la UI
 
 > 👉 **React es una librería \(o biblioteca\) que sólo se encarga de resolver un problema: renderizar la** _**vista**_ **o UI de nuestra aplicación**.
 
@@ -156,7 +115,7 @@ Además, **esta característica permite también que podamos reutilizar código 
 
 [↑ Ir al inicio](https://github.com/undefinedschool/notes-react-principles#contenido)
 
-### Nuestra tarea como _React devs_
+## Nuestra tarea como _React devs_
 
 Como devs, tendremos que tomar varias decisiones relacionadas a la _arquitectura de la aplicación_, que podrían resumirse en los siguientes puntos:
 
