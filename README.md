@@ -86,7 +86,7 @@ El principal beneficio de tomar este approach, en el que los datos _fluyen_ a tr
 
 **Actualizar y volver a renderizar el DOM en el browser cada vez que queremos realizar un cambio en la UI tiene un gran impacto en la performance de nuestra aplicación**, porque implica realizar operaciones costosas. Al hacer cambios en el DOM, el elemento modificado y sus descendientes \(children\) deben volver a renderizarse para que el cambio se vea reflejado en la UI. Realizar estas operaciones continuamente \([_re-rendering_, _re-painting_, etc](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction)\) es lo que vuelven lenta y poco eficiente a esta forma de trabajar.
 
-React propone utilizar una alternativa, el _Virtual DOM_.
+Con React no hacemos cambios al DOM _directamente_, en cambio, esta librería propone utilizar una alternativa, el _Virtual DOM_.
 
 > 👉 **El** [_**Virtual DOM**_](https://programmingwithmosh.com/react/react-virtual-dom-explained/) **es una representación virtual del DOM, una "versión liviana" \(un gran objeto JS\) del DOM real que encontramos en el browser, que React utiliza para** _**mapear**_ **elementos del DOM real y poder realizar cambios en este de una forma mucho más rápida y eficiente**. Cada vez que el _state_ de nuestra aplicación cambia, se actualiza el _Virtual DOM_ y no el DOM real.
 
