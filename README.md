@@ -22,7 +22,7 @@ Con los años, la complejidad de las aplicaciones web fue creciendo. Al principi
 
 Pero la complejidad de las bases de código seguía aumentando y los programas eran cada vez más difíciles de mantener. El framework _AngularJS_ aparece en el 2010 y se posiciona rápidamente como el nuevo standard para construir SPAs \(single-page applications\), aportando una estructura y el uso de ciertos patrones \(MVC\) para organizar mejor nuestras aplicaciones.
 
-Más aún, en aplicaciones donde acciones en diferentes partes de la UI tenían efectos sobre otras[\[1\]](./#cite_note-1), los problemas seguían estando y nos encontrábamos con aplicaciones escritas en _Angular_ donde era difícil entender el _flujo de los datos_ y qué parte del código afectaba a cuál otra.
+Más aún, en aplicaciones donde acciones en diferentes partes de la UI tenían efectos sobre otras<sup id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup>, los problemas seguían estando y nos encontrábamos con aplicaciones escritas en _Angular_ donde era difícil entender el _flujo de los datos_ y qué parte del código afectaba a cuál otra.
 
 Facebook tenía este problema muy presente, por lo que decidieron desarrollar una alternativa. [En el 2013, Facebook libera _React_](https://www.youtube.com/watch?v=GW0rj4sNH2w), _una biblioteca de JavaScript para construir interfaces de usuario_, según definen en el [sitio oficial](https://reactjs.org/).
 
@@ -125,5 +125,7 @@ Como devs, tendremos que tomar varias decisiones relacionadas a la _arquitectura
 
 [↑ Ir al inicio](https://github.com/undefinedschool/notes-react-principles#contenido)
 
-[1](./#cite_ref-1) Estos problemas existieron \(y todavía existen\) en las librerías que decidieron usar [_**2-way data binding**_](https://medium.com/front-end-weekly/what-is-2-way-data-binding-44dd8082e48e) **\(o flujo de datos** _**bidireccional**_**\)**. Es decir, los cambios en la UI afectan al objeto JS que la UI quiere representar y viceversa.
+---
+
+<sup id="cite_note-1"><a href="#cite_ref-1">1</a></sup> Estos problemas existieron \(y todavía existen\) en las librerías que decidieron usar [_**2-way data binding**_](https://medium.com/front-end-weekly/what-is-2-way-data-binding-44dd8082e48e) **\(o flujo de datos** _**bidireccional**_**\)**. Es decir, los cambios en la UI afectan al objeto JS que la UI quiere representar y viceversa.
 
