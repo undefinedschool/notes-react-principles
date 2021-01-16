@@ -1,4 +1,4 @@
-# ![React: Principios](https://i.imgur.com/KpuNcbY.png)
+# React: Principios
 
 ### 👉 Ver [todas las notas](https://github.com/undefinedschool/notes)
 
@@ -13,6 +13,8 @@
   * [Virtual DOM](https://github.com/undefinedschool/notes-react#virtual-dom)
   * [Sólo se encarga de la UI](https://github.com/undefinedschool/notes-react#s%C3%B3lo-se-encarga-de-la-ui)
 * [Nuestra tarea como React devs](https://github.com/undefinedschool/notes-react#nuestra-tarea-como-react-devs)
+
+---
 
 ## Qué problema resuelve React?
 
